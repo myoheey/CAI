@@ -24,17 +24,17 @@ interface DecisionSimulationRow {
 }
 
 const PATH_LABELS: Record<string, { label: string; icon: string }> = {
-  stay: { label: "현재 유지", icon: "\u{1F3E0}" },
-  move_similar: { label: "유사 분야 이동", icon: "\u{1F500}" },
-  pivot: { label: "완전 전환", icon: "\u{1F680}" }
+  stay: { label: "현재 유지", icon: "🏠" },
+  move_similar: { label: "유사 분야 이동", icon: "🔀" },
+  pivot: { label: "완전 전환", icon: "🚀" }
 };
 
 const VUCCA_ICONS: Record<string, string> = {
-  Volatility: "\u{1F30A}",
-  Uncertainty: "\u{1F32B}\uFE0F",
-  Complexity: "\u{1F9E9}",
-  Ambiguity: "\u{2753}",
-  Anxiety: "\u{1F494}"
+  Volatility: "🌊",
+  Uncertainty: "🌫️",
+  Complexity: "🧩",
+  Ambiguity: "❓",
+  Anxiety: "💔"
 };
 
 function asString(value: unknown, fallback = "-"): string {
@@ -84,8 +84,6 @@ function parseDecisionSimulation(value: unknown): DecisionSimulationRow[] {
     first_step: asString(row.first_step)
   }));
 }
-
-
 
 function SectionHeader({ icon, title }: { icon: string; title: string }) {
   return (
@@ -141,8 +139,6 @@ export default function ReportPage() {
     );
   }
 
-
-
   if (market === "B2B_EDU" || market === "HR_CORP") {
     return (
       <main className="report-page">
@@ -177,7 +173,7 @@ export default function ReportPage() {
 
         {/* ===== STRATEGIC OVERVIEW ===== */}
         <section className="rpt-section">
-          <SectionHeader icon="\u{1F9ED}" title="전략적 개요" />
+          <SectionHeader icon="🧭" title="전략적 개요" />
 
           <div className="rpt-identity-card">
             <div className="rpt-identity-label">한 문장 정체성</div>
@@ -207,7 +203,7 @@ export default function ReportPage() {
 
         {/* ===== TRADEOFFS ===== */}
         <section className="rpt-section">
-          <SectionHeader icon="\u2696\uFE0F" title="트레이드오프 분석" />
+          <SectionHeader icon="⚖️" title="트레이드오프 분석" />
           <div className="rpt-ai-card-grid">
             {asObjectList(report.tradeoffs).map((item, index) => (
               <article key={`${asString(item.title, "tradeoff")}-${index}`} className="rpt-ai-card">
@@ -224,7 +220,7 @@ export default function ReportPage() {
 
         {/* ===== RELATIONSHIP DYNAMICS ===== */}
         <section className="rpt-section">
-          <SectionHeader icon="\u{1F91D}" title="관계 역학" />
+          <SectionHeader icon="🤝" title="관계 역학" />
           <div className="rpt-rel-levels">
             <div className="rpt-rel-level">
               <div className="rpt-rel-level-label">현재 관계 수준</div>
@@ -249,11 +245,11 @@ export default function ReportPage() {
 
         {/* ===== VUCCA RISK MAP ===== */}
         <section className="rpt-section">
-          <SectionHeader icon="\u{1F6A8}" title="VUCCA 리스크 맵" />
+          <SectionHeader icon="🚨" title="VUCCA 리스크 맵" />
           <div className="rpt-vucca-grid">
             {vuccaRiskMap.map((item, index) => {
               const dim = asString(item.dimension);
-              const icon = VUCCA_ICONS[dim] || "\u26A0\uFE0F";
+              const icon = VUCCA_ICONS[dim] || "⚠️";
               return (
                 <article key={`${dim}-${index}`} className="rpt-vucca-card">
                   <div className="rpt-vucca-header">
@@ -276,10 +272,10 @@ export default function ReportPage() {
 
         {/* ===== ENERGY PATTERN ===== */}
         <section className="rpt-section">
-          <SectionHeader icon="\u26A1" title="에너지 패턴" />
+          <SectionHeader icon="⚡" title="에너지 패턴" />
           <div className="rpt-energy-grid">
             <div className="rpt-energy-card rpt-energy-gains">
-              <h3 className="rpt-energy-title">{"\u{1F7E2}"} 에너지 충전</h3>
+              <h3 className="rpt-energy-title">🟢 에너지 충전</h3>
               <ul className="rpt-energy-list">
                 {asStringList(energyPattern.gains).map((g, i) => (
                   <li key={i}>{g}</li>
@@ -287,7 +283,7 @@ export default function ReportPage() {
               </ul>
             </div>
             <div className="rpt-energy-card rpt-energy-drains">
-              <h3 className="rpt-energy-title">{"\u{1F534}"} 에너지 소모</h3>
+              <h3 className="rpt-energy-title">🔴 에너지 소모</h3>
               <ul className="rpt-energy-list">
                 {asStringList(energyPattern.drains).map((d, i) => (
                   <li key={i}>{d}</li>
@@ -296,7 +292,7 @@ export default function ReportPage() {
             </div>
           </div>
           <div className="rpt-recovery-card">
-            <span className="rpt-recovery-icon">{"\u{1F33F}"}</span>
+            <span className="rpt-recovery-icon">🌿</span>
             <div>
               <strong>마이크로 리커버리</strong>
               <p>{asString(energyPattern.micro_recovery)}</p>
@@ -306,10 +302,10 @@ export default function ReportPage() {
 
         {/* ===== DECISION SIMULATION ===== */}
         <section className="rpt-section">
-          <SectionHeader icon="\u{1F52E}" title="의사결정 시뮬레이션" />
+          <SectionHeader icon="🔮" title="의사결정 시뮬레이션" />
           <div className="rpt-decision-cards">
             {decisionSimulation.map((row) => {
-              const pathInfo = PATH_LABELS[row.path] || { label: row.path, icon: "\u{1F4CD}" };
+              const pathInfo = PATH_LABELS[row.path] || { label: row.path, icon: "📍" };
               return (
                 <article key={row.path} className="rpt-decision-card">
                   <div className="rpt-decision-header">
@@ -342,12 +338,12 @@ export default function ReportPage() {
 
         {/* ===== 90-DAY PLAN ===== */}
         <section className="rpt-section">
-          <SectionHeader icon="\u{1F4C5}" title="90일 실행 계획" />
+          <SectionHeader icon="📅" title="90일 실행 계획" />
           <div className="rpt-timeline">
             {(["D30", "D60", "D90"] as const).map((stageKey, i) => {
               const stage = readPlanStage(plan90d, stageKey);
               const stageLabel = stageKey === "D30" ? "1~30일" : stageKey === "D60" ? "31~60일" : "61~90일";
-              const stageColor = i === 0 ? "#2d6cdf" : i === 1 ? "#7c3aed" : "#059669";
+              const stageColor = i === 0 ? "#2E7D32" : i === 1 ? "#388E3C" : "#4CAF50";
               return (
                 <article key={stageKey} className="rpt-timeline-stage">
                   <div className="rpt-timeline-dot" style={{ background: stageColor }} />
@@ -385,7 +381,7 @@ export default function ReportPage() {
 
         {/* ===== REFLECTION ===== */}
         <section className="rpt-section">
-          <SectionHeader icon="\u{1F4AD}" title="성찰 질문" />
+          <SectionHeader icon="💭" title="성찰 질문" />
           <div className="rpt-reflection-list">
             {asStringList(report.reflection_questions).map((question, i) => (
               <div key={i} className="rpt-reflection-item">
@@ -398,7 +394,7 @@ export default function ReportPage() {
 
         {/* ===== DISCLAIMER ===== */}
         <section className="rpt-section rpt-disclaimer">
-          <SectionHeader icon="\u{1F4CB}" title="면책 조항" />
+          <SectionHeader icon="📋" title="면책 조항" />
           <p>{asString(report.disclaimer)}</p>
         </section>
       </div>
