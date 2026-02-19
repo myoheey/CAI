@@ -12,7 +12,7 @@ addFormats(ajv);
 
 const scoreRequestSchema = {
   type: "object",
-  required: ["intake", "answers"],
+  required: ["answers"],
   additionalProperties: false,
   properties: {
     intake: {
@@ -90,7 +90,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, errors: validateScoreRequest.errors }, { status: 400 });
   }
 
-  const intake = payload.intake as IntakeDraft;
+  const defaultIntake: IntakeDraft = {
+    person: { gender: "U", age_band: "20s" },
+    context: { industry: "", role: "", career_years: 0 },
+    relationship_map: { current_level: 1 },
+    assessment_meta: { test_version: "anchor_v1.2", locale: "ko-KR" }
+  };
+  const intake = payload.intake ? (payload.intake as IntakeDraft) : defaultIntake;
+  const hasIntake = Boolean(payload.intake);
   const answers = payload.answers as AnswersMap;
   const questionBank = await getQuestionBank();
   const anchors = computeAnchorScores(questionBank, answers);
@@ -113,7 +120,8 @@ export async function POST(request: Request) {
       },
       growth_intentions: null,
       raw: null
-    }
+    },
+    has_intake: hasIntake
   };
 
   const derived = buildDerived({
