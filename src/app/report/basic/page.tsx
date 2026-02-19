@@ -42,7 +42,7 @@ interface ScoringEnvelope {
 }
 
 const ANCHOR_COLORS: Record<string, string> = {
-  TF: "#2d6cdf",
+  TF: "#2E7D32",
   GM: "#7c3aed",
   AU: "#059669",
   SE: "#d97706",
@@ -53,14 +53,14 @@ const ANCHOR_COLORS: Record<string, string> = {
 };
 
 const ANCHOR_ICONS: Record<string, string> = {
-  TF: "\u{1F3AF}",
-  GM: "\u{1F451}",
-  AU: "\u{1F985}",
-  SE: "\u{1F6E1}\uFE0F",
-  EC: "\u{1F680}",
-  SV: "\u{1F49A}",
-  CH: "\u26A1",
-  LS: "\u2696\uFE0F"
+  TF: "🔧",
+  GM: "👔",
+  AU: "🦅",
+  SE: "🛡️",
+  EC: "🚀",
+  SV: "💚",
+  CH: "⚡",
+  LS: "⚖️"
 };
 
 const ANCHOR_INFO: Record<
@@ -68,96 +68,96 @@ const ANCHOR_INFO: Record<
   { label: string; description: string; energy: string; stress: string }
 > = {
   TF: {
-    label: "\uAE30\uC220/\uAE30\uB2A5 \uC804\uBB38\uC131",
+    label: "기술/기능 전문성",
     description:
-      "\uD2B9\uC815 \uBD84\uC57C\uC758 \uC804\uBB38 \uC9C0\uC2DD\uACFC \uAE30\uC220\uC744 \uC2EC\uD654\uD558\uACE0 \uC804\uBB38\uAC00\uB85C\uC11C \uC778\uC815\uBC1B\uB294 \uAC83\uC5D0 \uAC00\uCE58\uB97C \uB461\uB2C8\uB2E4.",
+      "특정 분야의 전문 지식과 기술을 심화하고 전문가로서 인정받는 것에 가치를 둡니다.",
     energy:
-      "\uC804\uBB38 \uAE30\uC220\uC744 \uBC1C\uD718\uD560 \uB54C, \uD574\uB2F9 \uBD84\uC57C\uC5D0\uC11C \uAD8C\uC704\uC790\uB85C \uC778\uC815\uBC1B\uC744 \uB54C",
+      "전문 기술을 발휘할 때, 해당 분야에서 권위자로 인정받을 때",
     stress:
-      "\uC804\uBB38\uC131\uACFC \uBB34\uAD00\uD55C \uC5C5\uBB34\uB97C \uD560 \uB54C, \uC81C\uB108\uB7F4\uB9AC\uC2A4\uD2B8\uAC00 \uB418\uB77C\uB294 \uC694\uAD6C\uB97C \uBC1B\uC744 \uB54C"
+      "전문성과 무관한 업무를 할 때, 제너럴리스트가 되라는 요구를 받을 때"
   },
   GM: {
-    label: "\uAD00\uB9AC \uC5ED\uB7C9",
+    label: "관리 역량",
     description:
-      "\uC870\uC9C1\uC744 \uC774\uB04C\uACE0, \uC0AC\uB78C\uB4E4\uC744 \uAD00\uB9AC\uD558\uBA70, \uC758\uC0AC\uACB0\uC815\uC5D0 \uC601\uD5A5\uC744 \uBBF8\uCE58\uB294 \uAC83\uC5D0 \uB3D9\uAE30\uBD80\uC5EC\uB97C \uBC1B\uC2B5\uB2C8\uB2E4.",
+      "조직을 이끌고, 사람들을 관리하며, 의사결정에 영향을 미치는 것에 동기부여를 받습니다.",
     energy:
-      "\uD300\uC744 \uC774\uB044\uACE0 \uC758\uC0AC\uACB0\uC815\uC744 \uB0B4\uB9B4 \uB54C, \uC870\uC9C1\uC801 \uC131\uACFC\uB97C \uB0BC \uB54C",
+      "팀을 이끌고 의사결정을 내릴 때, 조직적 성과를 낼 때",
     stress:
-      "\uC601\uD5A5\uB825\uC774 \uC81C\uD55C\uB420 \uB54C, \uB2E8\uC21C \uC2E4\uBB34\uB9CC \uC694\uAD6C\uB420 \uB54C"
+      "영향력이 제한될 때, 단순 실무만 요구될 때"
   },
   AU: {
-    label: "\uC790\uC728/\uB3C5\uB9BD",
+    label: "자율/독립",
     description:
-      "\uC790\uC2E0\uB9CC\uC758 \uBC29\uC2DD\uC73C\uB85C \uC77C\uD558\uACE0, \uADDC\uCE59\uC774\uB098 \uC808\uCC28\uC5D0 \uC597\uB9E4\uC774\uC9C0 \uC54A\uB294 \uC790\uC720\uB97C \uCD94\uAD6C\uD569\uB2C8\uB2E4.",
+      "자신만의 방식으로 일하고, 규칙이나 절차에 얽매이지 않는 자유를 추구합니다.",
     energy:
-      "\uC790\uC720\uB86D\uAC8C \uC77C\uD560 \uB54C, \uC790\uC2E0\uC758 \uC2A4\uCF00\uC904\uACFC \uBC29\uBC95\uC744 \uC120\uD0DD\uD560 \uC218 \uC788\uC744 \uB54C",
+      "자유롭게 일할 때, 자신의 스케줄과 방법을 선택할 수 있을 때",
     stress:
-      "\uBBF8\uC138 \uAD00\uB9AC\uB97C \uBC1B\uC744 \uB54C, \uACBD\uC9C1\uB41C \uC870\uC9C1 \uBB38\uD654\uC5D0\uC11C \uC77C\uD560 \uB54C"
+      "미세 관리를 받을 때, 경직된 조직 문화에서 일할 때"
   },
   SE: {
-    label: "\uC548\uC815/\uBCF4\uC7A5",
+    label: "안정/보장",
     description:
-      "\uC608\uCE21 \uAC00\uB2A5\uD55C \uD658\uACBD, \uACE0\uC6A9 \uC548\uC815, \uC7AC\uC815\uC801 \uBCF4\uC7A5 \uB4F1 \uC548\uC815\uAC10\uC744 \uC6B0\uC120\uC2DC\uD569\uB2C8\uB2E4.",
+      "예측 가능한 환경, 고용 안정, 재정적 보장 등 안정감을 우선시합니다.",
     energy:
-      "\uC548\uC815\uC801\uC778 \uACE0\uC6A9\uACFC \uC608\uCE21 \uAC00\uB2A5\uD55C \uD658\uACBD\uC5D0\uC11C \uC77C\uD560 \uB54C",
+      "안정적인 고용과 예측 가능한 환경에서 일할 때",
     stress:
-      "\uBD88\uD655\uC2E4\uC131\uC774 \uB192\uC744 \uB54C, \uAD6C\uC870\uC870\uC815\uC774\uB098 \uBCC0\uD654\uAC00 \uBC18\uBCF5\uB420 \uB54C"
+      "불확실성이 높을 때, 구조조정이나 변화가 반복될 때"
   },
   EC: {
-    label: "\uAE30\uC5C5\uAC00\uC801 \uCC3D\uC758\uC131",
+    label: "기업가적 창의성",
     description:
-      "\uC0C8\uB85C\uC6B4 \uC0AC\uC5C5\uC774\uB098 \uD504\uB85C\uC81D\uD2B8\uB97C \uB9CC\uB4E4\uACE0, \uC544\uC774\uB514\uC5B4\uB97C \uD604\uC2E4\uB85C \uAD6C\uD604\uD558\uB294 \uAC83\uC5D0 \uC5F4\uC815\uC744 \uB290\uB08D\uB2C8\uB2E4.",
+      "새로운 사업이나 프로젝트를 만들고, 아이디어를 현실로 구현하는 것에 열정을 느낍니다.",
     energy:
-      "\uC0C8\uB85C\uC6B4 \uAC83\uC744 \uB9CC\uB4E4\uACE0 \uCC3D\uC870\uD560 \uB54C, \uC544\uC774\uB514\uC5B4\uB97C \uC2E4\uD604\uD560 \uB54C",
+      "새로운 것을 만들고 창조할 때, 아이디어를 실현할 때",
     stress:
-      "\uBC18\uBCF5\uC801\uC774\uACE0 \uC815\uD615\uD654\uB41C \uC5C5\uBB34\uB97C \uD560 \uB54C, \uD610\uC2E0\uC774 \uB9C9\uD790 \uB54C"
+      "반복적이고 정형화된 업무를 할 때, 혁신이 막힐 때"
   },
   SV: {
-    label: "\uBD09\uC0AC/\uD5CC\uC2E0",
+    label: "봉사/헌신",
     description:
-      "\uC138\uC0C1\uC744 \uB354 \uB098\uC740 \uACF3\uC73C\uB85C \uB9CC\uB4E4\uACE0, \uD0C0\uC778\uC744 \uB3D5\uACE0, \uC0AC\uD68C\uC801 \uAC00\uCE58\uB97C \uC2E4\uD604\uD558\uB294 \uB370 \uC758\uBBF8\uB97C \uB461\uB2C8\uB2E4.",
+      "세상을 더 나은 곳으로 만들고, 타인을 돕고, 사회적 가치를 실현하는 데 의미를 둡니다.",
     energy:
-      "\uC0AC\uD68C\uC801 \uC758\uBBF8\uAC00 \uC788\uB294 \uC77C\uC744 \uD560 \uB54C, \uB204\uAD70\uAC00\uB97C \uB3C4\uC6B8 \uB54C",
+      "사회적 의미가 있는 일을 할 때, 누군가를 도울 때",
     stress:
-      "\uC774\uC775\uB9CC \uCD94\uAD6C\uD558\uB294 \uD658\uACBD\uC5D0\uC11C, \uAC00\uCE58\uAD00\uACFC \uCDA9\uB3CC\uD558\uB294 \uC5C5\uBB34\uB97C \uD560 \uB54C"
+      "이익만 추구하는 환경에서, 가치관과 충돌하는 업무를 할 때"
   },
   CH: {
-    label: "\uC21C\uC218\uD55C \uB3C4\uC804",
+    label: "순수한 도전",
     description:
-      "\uC5B4\uB835\uACE0 \uBCF5\uC7A1\uD55C \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uB294 \uAC83 \uC790\uCCB4\uC5D0\uC11C \uC131\uCDE8\uAC10\uC744 \uC5BB\uC73C\uBA70, \uACBD\uC7C1\uACFC \uADF9\uBCF5\uC744 \uC990\uAE41\uB2C8\uB2E4.",
+      "어렵고 복잡한 문제를 해결하는 것 자체에서 성취감을 얻으며, 경쟁과 극복을 즐깁니다.",
     energy:
-      "\uB09C\uC81C\uB97C \uD480 \uB54C, \uACBD\uC7C1\uC5D0\uC11C \uC2B9\uB9AC\uD560 \uB54C, \uBD88\uAC00\uB2A5\uC744 \uAC00\uB2A5\uC73C\uB85C \uB9CC\uB4E4 \uB54C",
+      "난제를 풀 때, 경쟁에서 승리할 때, 불가능을 가능으로 만들 때",
     stress:
-      "\uB108\uBB34 \uC27D\uAC70\uB098 \uBC18\uBCF5\uC801\uC778 \uC77C\uC744 \uD560 \uB54C, \uB3C4\uC804 \uAE30\uD68C\uAC00 \uC5C6\uC744 \uB54C"
+      "너무 쉽거나 반복적인 일을 할 때, 도전 기회가 없을 때"
   },
   LS: {
-    label: "\uB77C\uC774\uD504\uC2A4\uD0C0\uC77C",
+    label: "라이프스타일",
     description:
-      "\uC77C\uACFC \uC0B6\uC758 \uADE0\uD615\uC744 \uC911\uC2DC\uD558\uBA70, \uCEE4\uB9AC\uC5B4\uAC00 \uAC1C\uC778 \uC0DD\uD65C\uACFC \uC870\uD654\uB97C \uC774\uB8E8\uB294 \uAC83\uC744 \uC6B0\uC120\uD569\uB2C8\uB2E4.",
+      "일과 삶의 균형을 중시하며, 커리어가 개인 생활과 조화를 이루는 것을 우선합니다.",
     energy:
-      "\uC77C\uACFC \uC0B6\uC774 \uC870\uD654\uB85C\uC6B8 \uB54C, \uAC1C\uC778 \uC2DC\uAC04\uC774 \uBCF4\uC7A5\uB420 \uB54C",
+      "일과 삶이 조화로울 때, 개인 시간이 보장될 때",
     stress:
-      "\uACFC\uB3C4\uD55C \uC5C5\uBB34\uB7C9\uC774\uB098 \uC7A5\uC2DC\uAC04 \uADFC\uBB34\uB97C \uC694\uAD6C\uBC1B\uC744 \uB54C"
+      "과도한 업무량이나 장시간 근무를 요구받을 때"
   }
 };
 
 const PATTERN_DESCRIPTIONS: Record<string, { title: string; detail: string; tagColor: string }> = {
   balanced: {
-    title: "\uADE0\uD615\uD615",
+    title: "균형형",
     detail:
-      "8\uAC1C \uC575\uCEE4 \uC810\uC218\uAC00 \uBE44\uAD50\uC801 \uACE0\uB974\uAC8C \uBD84\uD3EC\uB418\uC5B4 \uC788\uC2B5\uB2C8\uB2E4. \uB2E4\uC591\uD55C \uAC00\uCE58\uB97C \uD3ED\uB113\uAC8C \uCD94\uAD6C\uD558\uB294 \uC720\uD615\uC73C\uB85C, \uC5EC\uB7EC \uD658\uACBD\uC5D0 \uC801\uC751\uD558\uAE30 \uC27D\uC9C0\uB9CC \uD575\uC2EC \uC6B0\uC120\uC21C\uC704\uB97C \uBA85\uD655\uD788 \uD558\uBA74 \uC758\uC0AC\uACB0\uC815\uC774 \uB354 \uC218\uC6D4\uD574\uC9D1\uB2C8\uB2E4.",
+      "8개 앵커 점수가 비교적 고르게 분포되어 있습니다. 다양한 가치를 폭넓게 추구하는 유형으로, 여러 환경에 적응하기 쉽지만 핵심 우선순위를 명확히 하면 의사결정이 더 수월해집니다.",
     tagColor: "#059669"
   },
   polarized: {
-    title: "\uC591\uADF9\uD654\uD615",
+    title: "양극화형",
     detail:
-      "\uC0C1\uC704 \uC575\uCEE4\uC640 \uD558\uC704 \uC575\uCEE4 \uAC04\uC758 \uCC28\uC774\uAC00 \uB69C\uB837\uD569\uB2C8\uB2E4. \uC790\uC2E0\uC774 \uC911\uC694\uC2DC\uD558\uB294 \uAC00\uCE58\uAC00 \uBA85\uD655\uD558\uBA70, \uADF8\uC5D0 \uB9DE\uB294 \uD658\uACBD\uC5D0\uC11C \uB192\uC740 \uBAB0\uC785\uACFC \uC131\uACFC\uB97C \uBCF4\uC77C \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uB2E4\uB9CC \uD558\uC704 \uC575\uCEE4\uAC00 \uC694\uAD6C\uB418\uB294 \uC0C1\uD669\uC5D0\uC11C\uB294 \uC2A4\uD2B8\uB808\uC2A4\uB97C \uB290\uB084 \uC218 \uC788\uC2B5\uB2C8\uB2E4.",
+      "상위 앵커와 하위 앵커 간의 차이가 뚜렷합니다. 자신이 중요시하는 가치가 명확하며, 그에 맞는 환경에서 높은 몰입과 성과를 보일 수 있습니다. 다만 하위 앵커가 요구되는 상황에서는 스트레스를 느낄 수 있습니다.",
     tagColor: "#d97706"
   },
   spiky: {
-    title: "\uC2A4\uD30C\uC774\uD06C\uD615",
+    title: "스파이크형",
     detail:
-      "\uD2B9\uC815 \uC575\uCEE4\uAC00 \uB208\uC5D0 \uB744\uAC8C \uB192\uAC70\uB098 \uB0AE\uC2B5\uB2C8\uB2E4. \uBA87 \uAC00\uC9C0 \uD575\uC2EC \uAC00\uCE58\uAC00 \uAC15\uD558\uAC8C \uC791\uB3D9\uD558\uBA70, \uD574\uB2F9 \uC601\uC5ED\uC5D0\uC11C \uD0C1\uC6D4\uD55C \uC131\uACFC\uB97C \uB0BC \uAC00\uB2A5\uC131\uC774 \uB192\uC2B5\uB2C8\uB2E4.",
+      "특정 앵커가 눈에 띄게 높거나 낮습니다. 몇 가지 핵심 가치가 강하게 작동하며, 해당 영역에서 탁월한 성과를 낼 가능성이 높습니다.",
     tagColor: "#dc2626"
   }
 };
@@ -167,7 +167,7 @@ function anchorLabel(code: string) {
 }
 
 function ScoreBar({ code, score, rank }: { code: string; score: number; rank: number }) {
-  const color = ANCHOR_COLORS[code] || "#2d6cdf";
+  const color = ANCHOR_COLORS[code] || "#2E7D32";
   const icon = ANCHOR_ICONS[code] || "";
   const info = ANCHOR_INFO[code];
   const isTop3 = rank <= 3;
@@ -196,12 +196,12 @@ function ChartTooltip({ active, payload }: TooltipProps<number, string>) {
   }
 
   const point = payload[0]?.payload as { anchor: string; score: number };
-  const color = ANCHOR_COLORS[point.anchor] || "#2d6cdf";
+  const color = ANCHOR_COLORS[point.anchor] || "#2E7D32";
   return (
     <div className="chart-tooltip">
       <span className="chart-tooltip-icon">{ANCHOR_ICONS[point.anchor]}</span>
       <strong style={{ color }}>{anchorLabel(point.anchor)}</strong>
-      <span className="chart-tooltip-score">{point.score}\uC810</span>
+      <span className="chart-tooltip-score">{point.score}점</span>
     </div>
   );
 }
@@ -231,7 +231,7 @@ export default function BasicReportPage() {
         setResult(parsed);
       }
     } catch {
-      setError("\uACB0\uACFC \uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC624\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4.");
+      setError("결과 데이터를 불러오지 못했습니다.");
     }
   }, []);
 
@@ -256,8 +256,8 @@ export default function BasicReportPage() {
   if (!result) {
     return (
       <main className="report-page">
-        <h1>\uAE30\uBCF8 \uBD84\uC11D \uB9AC\uD3EC\uD2B8</h1>
-        <p>\uD45C\uC2DC\uD560 \uACB0\uACFC\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4. \uBA3C\uC800 \uAC80\uC0AC\uB97C \uC644\uB8CC\uD574\uC8FC\uC138\uC694.</p>
+        <h1>기본 분석 리포트</h1>
+        <p>표시할 결과가 없습니다. 먼저 검사를 완료해주세요.</p>
         {error ? <p className="report-error">{error}</p> : null}
       </main>
     );
@@ -274,10 +274,10 @@ export default function BasicReportPage() {
       <div id="basic-report-content">
         {/* ===== HEADER ===== */}
         <header className="rpt-hero">
-          <div className="rpt-hero-badge">\uAE30\uBCF8 \uBD84\uC11D</div>
-          <h1 className="rpt-hero-title">\uCEE4\uB9AC\uC5B4 \uC575\uCEE4 \uBD84\uC11D \uB9AC\uD3EC\uD2B8</h1>
+          <div className="rpt-hero-badge">기본 분석</div>
+          <h1 className="rpt-hero-title">커리어 앵커 분석 리포트</h1>
           <p className="rpt-hero-sub">
-            \uB2F9\uC2E0\uC758 8\uAC00\uC9C0 \uCEE4\uB9AC\uC5B4 \uAC00\uCE58 \uC810\uC218\uB97C \uAE30\uBC18\uC73C\uB85C \uD55C \uBD84\uC11D \uACB0\uACFC\uC785\uB2C8\uB2E4.
+            당신의 8가지 커리어 가치 점수를 기반으로 한 분석 결과입니다.
           </p>
         </header>
 
@@ -288,23 +288,23 @@ export default function BasicReportPage() {
           </div>
           <p className="rpt-pattern-detail">{pattern?.detail}</p>
           <div className="rpt-stats-row">
-            <StatCard label="\uD3C9\uADE0" value={`${derived.score_stats.mean.toFixed(0)}\uC810`} />
-            <StatCard label="\uCD5C\uACE0" value={`${derived.score_stats.max.toFixed(0)}\uC810`} />
-            <StatCard label="\uCD5C\uC800" value={`${derived.score_stats.min.toFixed(0)}\uC810`} />
-            <StatCard label="\uD3B8\uCC28" value={`${derived.score_stats.range.toFixed(0)}\uC810`} />
+            <StatCard label="평균" value={`${derived.score_stats.mean.toFixed(0)}점`} />
+            <StatCard label="최고" value={`${derived.score_stats.max.toFixed(0)}점`} />
+            <StatCard label="최저" value={`${derived.score_stats.min.toFixed(0)}점`} />
+            <StatCard label="편차" value={`${derived.score_stats.range.toFixed(0)}점`} />
           </div>
         </section>
 
         {/* ===== RADAR CHART ===== */}
         <section className="rpt-section">
           <h2 className="rpt-section-title">
-            <span className="rpt-section-icon">\uD83D\uDCCA</span>
-            \uC575\uCEE4 \uD504\uB85C\uD544
+            <span className="rpt-section-icon">📊</span>
+            앵커 프로필
           </h2>
           <div className="rpt-chart-container">
             <ResponsiveContainer width="100%" height={380}>
               <RadarChart data={chartData} outerRadius="70%">
-                <PolarGrid strokeDasharray="3 3" stroke="#e0e0e0" />
+                <PolarGrid strokeDasharray="3 3" stroke="#e0e4d9" />
                 <PolarAngleAxis
                   dataKey="anchor"
                   tick={({ x, y, payload }: { x: number; y: number; payload: { value: string } }) => {
@@ -336,15 +336,15 @@ export default function BasicReportPage() {
                 <Tooltip content={<ChartTooltip />} />
                 <Radar
                   dataKey="score"
-                  stroke="#2d6cdf"
+                  stroke="#2E7D32"
                   strokeWidth={2}
                   fill="url(#radarGradient)"
                   fillOpacity={0.5}
                 />
                 <defs>
                   <radialGradient id="radarGradient" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#2d6cdf" stopOpacity={0.1} />
-                    <stop offset="100%" stopColor="#2d6cdf" stopOpacity={0.5} />
+                    <stop offset="0%" stopColor="#2E7D32" stopOpacity={0.1} />
+                    <stop offset="100%" stopColor="#2E7D32" stopOpacity={0.5} />
                   </radialGradient>
                 </defs>
               </RadarChart>
@@ -355,8 +355,8 @@ export default function BasicReportPage() {
         {/* ===== SCORE BARS ===== */}
         <section className="rpt-section">
           <h2 className="rpt-section-title">
-            <span className="rpt-section-icon">\uD83C\uDFC6</span>
-            \uC575\uCEE4 \uC810\uC218 \uC21C\uC704
+            <span className="rpt-section-icon">🏆</span>
+            앵커 점수 순위
           </h2>
           <div className="rpt-score-bars">
             {rankedData.map(({ code, score, rank }) => (
@@ -368,15 +368,15 @@ export default function BasicReportPage() {
         {/* ===== TOP ANCHORS ===== */}
         <section className="rpt-section">
           <h2 className="rpt-section-title">
-            <span className="rpt-section-icon">\u2B50</span>
-            \uD575\uC2EC \uC575\uCEE4 TOP 3
+            <span className="rpt-section-icon">⭐</span>
+            핵심 앵커 TOP 3
           </h2>
-          <p className="rpt-section-desc">\uB2F9\uC2E0\uC774 \uAC00\uC7A5 \uC911\uC694\uD558\uAC8C \uC5EC\uAE30\uB294 \uCEE4\uB9AC\uC5B4 \uAC00\uCE58\uC785\uB2C8\uB2E4.</p>
+          <p className="rpt-section-desc">당신이 가장 중요하게 여기는 커리어 가치입니다.</p>
           <div className="rpt-anchor-cards">
             {top3.map((code, index) => {
               const info = ANCHOR_INFO[code];
               const score = result.input.scores.anchors[code as AnchorCode];
-              const color = ANCHOR_COLORS[code] || "#2d6cdf";
+              const color = ANCHOR_COLORS[code] || "#2E7D32";
               return (
                 <article
                   key={code}
@@ -387,7 +387,7 @@ export default function BasicReportPage() {
                     <span className="rpt-anchor-card-icon">{ANCHOR_ICONS[code]}</span>
                     <div>
                       <div className="rpt-anchor-card-rank" style={{ color }}>
-                        {index + 1}\uC704
+                        {index + 1}위
                       </div>
                       <h3 className="rpt-anchor-card-name">{info?.label ?? code}</h3>
                     </div>
@@ -397,8 +397,8 @@ export default function BasicReportPage() {
                   </div>
                   <p className="rpt-anchor-card-desc">{info?.description}</p>
                   <div className="rpt-anchor-card-tags">
-                    <span className="rpt-tag rpt-tag-energy">\uC5D0\uB108\uC9C0 UP: {info?.energy}</span>
-                    <span className="rpt-tag rpt-tag-stress">\uC2A4\uD2B8\uB808\uC2A4: {info?.stress}</span>
+                    <span className="rpt-tag rpt-tag-energy">에너지 UP: {info?.energy}</span>
+                    <span className="rpt-tag rpt-tag-stress">스트레스: {info?.stress}</span>
                   </div>
                 </article>
               );
@@ -409,10 +409,10 @@ export default function BasicReportPage() {
         {/* ===== BOTTOM ANCHORS ===== */}
         <section className="rpt-section">
           <h2 className="rpt-section-title">
-            <span className="rpt-section-icon">\uD83D\uDCA1</span>
-            \uD558\uC704 \uC575\uCEE4 (\uC2A4\uD2B8\uB808\uC2A4 \uC694\uC778)
+            <span className="rpt-section-icon">💡</span>
+            하위 앵커 (스트레스 요인)
           </h2>
-          <p className="rpt-section-desc">\uC774 \uAC00\uCE58\uAC00 \uC694\uAD6C\uB418\uB294 \uD658\uACBD\uC5D0\uC11C\uB294 \uD53C\uB85C\uAC10\uC744 \uB290\uB084 \uC218 \uC788\uC2B5\uB2C8\uB2E4.</p>
+          <p className="rpt-section-desc">이 가치가 요구되는 환경에서는 피로감을 느낄 수 있습니다.</p>
           <div className="rpt-anchor-cards">
             {bottom2.map((code) => {
               const info = ANCHOR_INFO[code];
@@ -435,7 +435,7 @@ export default function BasicReportPage() {
                   </div>
                   <p className="rpt-anchor-card-desc">{info?.description}</p>
                   <div className="rpt-anchor-card-tags">
-                    <span className="rpt-tag rpt-tag-stress">\uC2A4\uD2B8\uB808\uC2A4 \uC694\uC778: {info?.stress}</span>
+                    <span className="rpt-tag rpt-tag-stress">스트레스 요인: {info?.stress}</span>
                   </div>
                 </article>
               );
@@ -447,15 +447,15 @@ export default function BasicReportPage() {
         {tradeoffs.length > 0 && (
           <section className="rpt-section">
             <h2 className="rpt-section-title">
-              <span className="rpt-section-icon">\u2696\uFE0F</span>
-              \uC7A0\uC7AC\uC801 \uD2B8\uB808\uC774\uB4DC\uC624\uD504
+              <span className="rpt-section-icon">⚖️</span>
+              잠재적 트레이드오프
             </h2>
             <p className="rpt-section-desc">
-              \uC0C1\uC704 \uC575\uCEE4\uC640 \uD558\uC704 \uC575\uCEE4 \uC0AC\uC774\uC5D0\uC11C \uBC1C\uC0DD\uD560 \uC218 \uC788\uB294 \uAE34\uC7A5 \uAD00\uACC4\uC785\uB2C8\uB2E4.
+              상위 앵커와 하위 앵커 사이에서 발생할 수 있는 긴장 관계입니다.
             </p>
             <div className="rpt-tradeoff-list">
               {tradeoffs.map((t) => {
-                const focusColor = ANCHOR_COLORS[t.focus] || "#2d6cdf";
+                const focusColor = ANCHOR_COLORS[t.focus] || "#2E7D32";
                 const sacColor = ANCHOR_COLORS[t.sacrifice] || "#999";
                 return (
                   <div key={`${t.focus}-${t.sacrifice}`} className="rpt-tradeoff-card">
@@ -463,14 +463,14 @@ export default function BasicReportPage() {
                       <span className="rpt-tradeoff-anchor" style={{ color: focusColor }}>
                         {ANCHOR_ICONS[t.focus]} {anchorLabel(t.focus)}
                       </span>
-                      <span className="rpt-tradeoff-arrow">\u2194\uFE0F</span>
+                      <span className="rpt-tradeoff-arrow">↔️</span>
                       <span className="rpt-tradeoff-anchor" style={{ color: sacColor }}>
                         {ANCHOR_ICONS[t.sacrifice]} {anchorLabel(t.sacrifice)}
                       </span>
                     </div>
                     <p className="rpt-tradeoff-desc">
-                      <strong>{anchorLabel(t.focus)}</strong>\uC744(\uB97C) \uCD94\uAD6C\uD560\uC218\uB85D{" "}
-                      <strong>{anchorLabel(t.sacrifice)}</strong>\uC774(\uAC00) \uC694\uAD6C\uD558\uB294 \uAC00\uCE58\uC640 \uCDA9\uB3CC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.
+                      <strong>{anchorLabel(t.focus)}</strong>을(를) 추구할수록{" "}
+                      <strong>{anchorLabel(t.sacrifice)}</strong>이(가) 요구하는 가치와 충돌할 수 있습니다.
                     </p>
                   </div>
                 );
@@ -482,15 +482,15 @@ export default function BasicReportPage() {
         {/* ===== DISCLAIMER ===== */}
         <section className="rpt-section rpt-disclaimer">
           <h2 className="rpt-section-title">
-            <span className="rpt-section-icon">\uD83D\uDCCB</span>
-            \uCC38\uACE0 \uC548\uB0B4
+            <span className="rpt-section-icon">📋</span>
+            참고 안내
           </h2>
           <p>
-            \uC774 \uB9AC\uD3EC\uD2B8\uB294 \uCEE4\uB9AC\uC5B4 \uC575\uCEE4 \uAC80\uC0AC \uC810\uC218\uB97C \uAE30\uBC18\uC73C\uB85C \uD55C \uAE30\uBCF8 \uBD84\uC11D\uC785\uB2C8\uB2E4. \uB354 \uAE4A\uC774 \uC788\uB294 \uB9DE\uCDA4\uD615 \uBD84\uC11D\uC744 \uC6D0\uD558\uC2DC\uBA74
-            \uCD94\uAC00 \uC815\uBCF4\uB97C \uC785\uB825\uD558\uACE0 AI \uC2EC\uCE35 \uB9AC\uD3EC\uD2B8\uB97C \uBC1B\uC544\uBCF4\uC138\uC694.
+            이 리포트는 커리어 앵커 검사 점수를 기반으로 한 기본 분석입니다. 더 깊이 있는 맞춤형 분석을 원하시면
+            추가 정보를 입력하고 AI 심층 리포트를 받아보세요.
           </p>
           <p className="text-secondary" style={{ fontSize: "0.85rem" }}>
-            \uC774 \uB9AC\uD3EC\uD2B8\uB294 \uC790\uAE30\uC774\uD574\uC640 \uCEE4\uB9AC\uC5B4 \uC758\uC0AC\uACB0\uC815\uC744 \uB3D5\uAE30 \uC704\uD55C \uCC38\uACE0\uC790\uB8CC\uC774\uBA70, \uC758\uD559\uC801/\uC2EC\uB9AC\uD559\uC801 \uC9C4\uB2E8\uC774 \uC544\uB2D9\uB2C8\uB2E4.
+            이 리포트는 자기이해와 커리어 의사결정을 돕기 위한 참고자료이며, 의학적/심리학적 진단이 아닙니다.
           </p>
         </section>
       </div>
@@ -500,13 +500,13 @@ export default function BasicReportPage() {
         <PdfDownloadButton
           targetId="basic-report-content"
           filename="career-anchor-basic-report.pdf"
-          label="\uAE30\uBCF8 \uB9AC\uD3EC\uD2B8 PDF \uB2E4\uC6B4\uB85C\uB4DC"
+          label="기본 리포트 PDF 다운로드"
         />
         <Link href="/results/additional-info" className="btn btn-primary">
-          AI \uC2EC\uCE35 \uB9AC\uD3EC\uD2B8 \uBC1B\uAE30
+          AI 심층 리포트 받기
         </Link>
         <Link href="/results/basic" className="btn btn-ghost">
-          \uACB0\uACFC \uD654\uBA74\uC73C\uB85C \uB3CC\uC544\uAC00\uAE30
+          결과 화면으로 돌아가기
         </Link>
       </div>
     </main>

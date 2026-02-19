@@ -85,17 +85,7 @@ function parseDecisionSimulation(value: unknown): DecisionSimulationRow[] {
   }));
 }
 
-function downloadJson(filename: string, content: string) {
-  const blob = new Blob([content], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement("a");
-  anchor.href = url;
-  anchor.download = filename;
-  document.body.append(anchor);
-  anchor.click();
-  anchor.remove();
-  URL.revokeObjectURL(url);
-}
+
 
 function SectionHeader({ icon, title }: { icon: string; title: string }) {
   return (
@@ -107,7 +97,6 @@ function SectionHeader({ icon, title }: { icon: string; title: string }) {
 }
 
 export default function ReportPage() {
-  const [rawEnvelope, setRawEnvelope] = useState<string>("");
   const [envelope, setEnvelope] = useState<ReportEnvelope | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -116,8 +105,6 @@ export default function ReportPage() {
     if (!raw) {
       return;
     }
-
-    setRawEnvelope(raw);
 
     try {
       const parsed = JSON.parse(raw) as ReportEnvelope;
@@ -154,14 +141,7 @@ export default function ReportPage() {
     );
   }
 
-  function renderRawJsonPanel() {
-    return (
-      <details className="raw-json-panel">
-        <summary>Raw JSON 보기</summary>
-        <pre>{rawEnvelope}</pre>
-      </details>
-    );
-  }
+
 
   if (market === "B2B_EDU" || market === "HR_CORP") {
     return (
@@ -175,19 +155,10 @@ export default function ReportPage() {
         </header>
 
         <div className="rpt-actions">
-          <button
-            type="button"
-            className="btn btn-outline"
-            onClick={() => downloadJson("career-anchor-report.json", rawEnvelope)}
-          >
-            Download JSON
-          </button>
           <Link href="/results/basic" className="btn btn-ghost">
             기본 결과로 돌아가기
           </Link>
         </div>
-
-        {renderRawJsonPanel()}
       </main>
     );
   }
@@ -214,7 +185,7 @@ export default function ReportPage() {
           </div>
 
           <div className="rpt-metaphor-card">
-            <div className="rpt-metaphor-icon">\u2693</div>
+            <div className="rpt-metaphor-icon">⚓</div>
             <div>
               <div className="rpt-metaphor-label">Sea Anchor 비유</div>
               <p className="rpt-metaphor-text">{asString(strategicOverview.sea_anchor_metaphor)}</p>
@@ -259,7 +230,7 @@ export default function ReportPage() {
               <div className="rpt-rel-level-label">현재 관계 수준</div>
               <div className="rpt-rel-level-value">{asString(relationshipDynamics.current_level)}</div>
             </div>
-            <div className="rpt-rel-arrow">\u2192</div>
+            <div className="rpt-rel-arrow">→</div>
             <div className="rpt-rel-level rpt-rel-level-desired">
               <div className="rpt-rel-level-label">희망 관계 수준</div>
               <div className="rpt-rel-level-value">{asString(relationshipDynamics.desired_level)}</div>
@@ -439,13 +410,6 @@ export default function ReportPage() {
           filename="career-anchor-ai-report.pdf"
           label="AI 리포트 PDF 다운로드"
         />
-        <button
-          type="button"
-          className="btn btn-ghost"
-          onClick={() => downloadJson("career-anchor-report.json", rawEnvelope)}
-        >
-          JSON 다운로드
-        </button>
         <Link href="/report/basic" className="btn btn-outline">
           기본 리포트 보기
         </Link>
@@ -453,8 +417,6 @@ export default function ReportPage() {
           결과 화면으로 돌아가기
         </Link>
       </div>
-
-      {renderRawJsonPanel()}
     </main>
   );
 }
