@@ -31,7 +31,7 @@ const PATH_LABELS: Record<string, { label: string; icon: string }> = {
 
 const VUCCA_ICONS: Record<string, string> = {
   Volatility: "\u{1F30A}",
-  Uncertainty: "\u{1F32B}\uFE0F",
+  Uncertainty: "\u{1F32B}️",
   Complexity: "\u{1F9E9}",
   Ambiguity: "\u{2753}",
   Anxiety: "\u{1F494}"
@@ -214,7 +214,7 @@ export default function ReportPage() {
           </div>
 
           <div className="rpt-metaphor-card">
-            <div className="rpt-metaphor-icon">\u2693</div>
+            <div className="rpt-metaphor-icon">⚓</div>
             <div>
               <div className="rpt-metaphor-label">Sea Anchor 비유</div>
               <p className="rpt-metaphor-text">{asString(strategicOverview.sea_anchor_metaphor)}</p>
@@ -236,7 +236,7 @@ export default function ReportPage() {
 
         {/* ===== TRADEOFFS ===== */}
         <section className="rpt-section">
-          <SectionHeader icon="\u2696\uFE0F" title="트레이드오프 분석" />
+          <SectionHeader icon="⚖️" title="트레이드오프 분석" />
           <div className="rpt-ai-card-grid">
             {asObjectList(report.tradeoffs).map((item, index) => (
               <article key={`${asString(item.title, "tradeoff")}-${index}`} className="rpt-ai-card">
@@ -259,7 +259,7 @@ export default function ReportPage() {
               <div className="rpt-rel-level-label">현재 관계 수준</div>
               <div className="rpt-rel-level-value">{asString(relationshipDynamics.current_level)}</div>
             </div>
-            <div className="rpt-rel-arrow">\u2192</div>
+            <div className="rpt-rel-arrow">→</div>
             <div className="rpt-rel-level rpt-rel-level-desired">
               <div className="rpt-rel-level-label">희망 관계 수준</div>
               <div className="rpt-rel-level-value">{asString(relationshipDynamics.desired_level)}</div>
@@ -282,7 +282,7 @@ export default function ReportPage() {
           <div className="rpt-vucca-grid">
             {vuccaRiskMap.map((item, index) => {
               const dim = asString(item.dimension);
-              const icon = VUCCA_ICONS[dim] || "\u26A0\uFE0F";
+              const icon = VUCCA_ICONS[dim] || "⚠️";
               return (
                 <article key={`${dim}-${index}`} className="rpt-vucca-card">
                   <div className="rpt-vucca-header">
@@ -305,7 +305,7 @@ export default function ReportPage() {
 
         {/* ===== ENERGY PATTERN ===== */}
         <section className="rpt-section">
-          <SectionHeader icon="\u26A1" title="에너지 패턴" />
+          <SectionHeader icon="⚡" title="에너지 패턴" />
           <div className="rpt-energy-grid">
             <div className="rpt-energy-card rpt-energy-gains">
               <h3 className="rpt-energy-title">{"\u{1F7E2}"} 에너지 충전</h3>
