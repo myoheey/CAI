@@ -1,0 +1,100 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input,
+select,
+textarea,
+button {
+  margin-top: 0.25rem;
+}
+
+button {
+  margin-right: 0.5rem;
+}
+
+.report-page {
+  line-height: 1.6;
+}
+
+.report-header {
+  margin-bottom: 1rem;
+}
+
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  color: inherit;
+}
+
+.report-error {
+  color: #b42318;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.raw-json-panel {
+  margin-top: 1rem;
+}
+
+.raw-json-panel pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem;
+}

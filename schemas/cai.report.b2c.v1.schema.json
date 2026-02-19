@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cai.report.b2c.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "strategic_overview",
+    "tradeoffs",
+    "relationship_dynamics",
+    "vucca_risk_map",
+    "energy_pattern",
+    "decision_simulation",
+    "plan_90d",
+    "reflection_questions",
+    "disclaimer"
+  ],
+  "properties": {
+    "strategic_overview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["one_sentence_identity", "sea_anchor_metaphor", "so_what"],
+      "properties": {
+        "one_sentence_identity": { "type": "string" },
+        "sea_anchor_metaphor": { "type": "string" },
+        "so_what": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "tradeoffs": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "description", "action"],
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "action": { "type": "string" }
+        }
+      }
+    },
+    "relationship_dynamics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current_level", "desired_level", "scripts"],
+      "properties": {
+        "current_level": { "type": "string" },
+        "desired_level": { "type": "string" },
+        "scripts": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "vucca_risk_map": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["dimension", "risk", "mitigation"],
+        "properties": {
+          "dimension": { "type": "string" },
+          "risk": { "type": "string" },
+          "mitigation": { "type": "string" }
+        }
+      }
+    },
+    "energy_pattern": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gains", "drains", "micro_recovery"],
+      "properties": {
+        "gains": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string" }
+        },
+        "drains": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string" }
+        },
+        "micro_recovery": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "decision_simulation": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "fit", "risk", "upside", "first_step"],
+        "properties": {
+          "path": { "enum": ["stay", "move_similar", "pivot"] },
+          "fit": { "type": "string" },
+          "risk": { "type": "string" },
+          "upside": { "type": "string" },
+          "first_step": { "type": "string" }
+        }
+      }
+    },
+    "plan_90d": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["D30", "D60", "D90"],
+      "properties": {
+        "D30": { "$ref": "#/$defs/planStage" },
+        "D60": { "$ref": "#/$defs/planStage" },
+        "D90": { "$ref": "#/$defs/planStage" }
+      }
+    },
+    "reflection_questions": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string" }
+    },
+    "disclaimer": { "type": "string" }
+  },
+  "$defs": {
+    "planStage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["focus", "actions", "metrics"],
+      "properties": {
+        "focus": { "type": "string" },
+        "actions": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string" }
+        },
+        "metrics": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

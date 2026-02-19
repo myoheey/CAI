@@ -1,0 +1,29 @@
+{
+  "version": "anchor_v1.2",
+  "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": ["전혀 아니다", "아니다", "보통", "그렇다", "매우 그렇다"]
+  },
+  "todo": "TODO: Replace sample items with real question bank items.",
+  "items": [
+    {
+      "id": "Q01",
+      "text": "나는 새로운 아이디어를 실행 가능한 형태로 만드는 데 흥미가 있다.",
+      "anchor_code": "TF",
+      "reverse": false
+    },
+    {
+      "id": "Q02",
+      "text": "나는 타인과 협력하여 공동의 목표를 이루는 과정에서 만족감을 느낀다.",
+      "anchor_code": "SV",
+      "reverse": false
+    },
+    {
+      "id": "Q03",
+      "text": "나는 안정적인 근무 환경보다 도전적인 과제를 선호한다.",
+      "anchor_code": "CH",
+      "reverse": false
+    }
+  ]
+}
