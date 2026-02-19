@@ -10,13 +10,13 @@ const MARKET_SCHEMA: Record<ReportMarket, Record<string, unknown>> = {
   HR_CORP: hrCorpSchema as Record<string, unknown>
 };
 
-const STRIP_KEYS = new Set(["$id", "$schema", "title"]);
+const SCHEMA_META_KEYS = new Set(["$id", "$schema", "title"]);
 
 function isPlainObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-export function sanitizeSchemaForOpenAI(schema: unknown): unknown {
+export function sanitizeSchemaForOpenAI(schema: unknown, insideProperties = false): unknown {
   if (Array.isArray(schema)) {
     return schema.map((item) => sanitizeSchemaForOpenAI(item));
   }
@@ -26,8 +26,8 @@ export function sanitizeSchemaForOpenAI(schema: unknown): unknown {
   }
 
   const sanitizedEntries = Object.entries(schema)
-    .filter(([key]) => !STRIP_KEYS.has(key))
-    .map(([key, value]) => [key, sanitizeSchemaForOpenAI(value)] as const);
+    .filter(([key]) => insideProperties || !SCHEMA_META_KEYS.has(key))
+    .map(([key, value]) => [key, sanitizeSchemaForOpenAI(value, key === "properties" || key === "$defs")] as const);
 
   return Object.fromEntries(sanitizedEntries);
 }

@@ -41,4 +41,32 @@ describe("sanitizeSchemaForOpenAI", () => {
     expect(child.title).toBeUndefined();
     expect(sanitized.properties.child.properties.value.$id).toBeUndefined();
   });
+
+  it("preserves 'title' when it is a data property name inside properties", () => {
+    const schema = {
+      type: "object",
+      properties: {
+        items: {
+          type: "array",
+          items: {
+            type: "object",
+            additionalProperties: false,
+            required: ["title", "description"],
+            properties: {
+              title: { type: "string" },
+              description: { type: "string" }
+            }
+          }
+        }
+      }
+    };
+
+    const sanitized = sanitizeSchemaForOpenAI(schema) as Record<string, unknown>;
+    const items = (sanitized as { properties: { items: { items: Record<string, unknown> } } }).properties.items.items;
+    const props = items.properties as Record<string, unknown>;
+
+    expect(props.title).toBeDefined();
+    expect(props.description).toBeDefined();
+    expect((items.required as string[]).includes("title")).toBe(true);
+  });
 });
