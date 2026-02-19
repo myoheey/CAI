@@ -10,14 +10,16 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^11.7.2",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
+    "html2canvas-pro": "^1.6.7",
+    "jspdf": "^4.2.0",
     "next": "15.4.8",
     "openai": "^4.77.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "recharts": "^2.15.0",
-    "@apidevtools/json-schema-ref-parser": "^11.7.2"
+    "recharts": "^2.15.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
