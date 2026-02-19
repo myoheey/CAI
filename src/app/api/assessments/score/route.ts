@@ -84,7 +84,7 @@ function createEmptyAnchors(): Record<AnchorCode, number> {
 }
 
 export async function POST(request: Request) {
-  const payload = await request.json();
+  const payload: { answers: unknown; intake?: unknown } = await request.json();
 
   if (!validateScoreRequest(payload)) {
     return NextResponse.json({ ok: false, errors: validateScoreRequest.errors }, { status: 400 });
